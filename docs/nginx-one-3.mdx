@@ -85,7 +85,7 @@ targetStatusCode={200}
 
 ## Manually Configure NGINX in Docker
 
-The **Lab Framework** from the UDF environment has **docker** installed and is setup so it can run an NGINX Plus container image. The container image we will use here is **private-registry.nginx.com/nginx-plus/agent:debian** which has NGINX Plus with the Agent. If you want to see a list of all NGINX Plus with Agent image tags, refer to the [documentation](https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-docker/#pulling-the-image).
+The **Lab Framework** from the UDF environment has **Docker** installed and is setup so it can run an NGINX Plus container image. The container image we will use here is **private-registry.nginx.com/nginx-plus/agent:r36-debian** which has NGINX Plus with the Agent. If you want to see a list of all NGINX Plus with Agent image tags, refer to the [documentation](https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-docker/#pulling-the-image).
 
 1. In the NGINX One Console, go to the *Details* page of the last Config Sync Group you created.
 
@@ -127,7 +127,7 @@ command below, take the following actions:
     --runtime=runc \
     -p 8080:80 \
     --env=NMS_SERVER_TOKEN="data-plane-key" \
-    -d private-registry.nginx.com/nginx-plus/agent:debian
+    -d private-registry.nginx.com/nginx-plus/agent:r36-debian
     ```
 
 1. In the NGINX One Console, navigate to *Instances*. You will see a new NGINX Plus instance added to the NGINX One Console. This instance will be randomly named based on the Docker container that was created, since a name was not provided.

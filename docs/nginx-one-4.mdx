@@ -66,15 +66,16 @@ Now that we have a data plane key, we can attach a new NGINX OSS instance to the
 
    <DockerContainer>
      <Docker
-       name="nginx-oss-3"
-       desc="NGINX Plus R32 with Agent."
-       image="private-registry.nginx.com/nginx-plus/agent:debian"
+       name="nginx-plus-3"
+       desc="NGINX Plus R36 with Agent."
+       image="private-registry.nginx.com/nginx-plus/agent:r36-debian"
        env={[
-         { name: "NGINX_AGENT_SERVER_GRPCPORT", value: "443" },
-         { name: "NGINX_AGENT_SERVER_HOST", value: "agent.connect.nginx.com" },
-         { name: "NGINX_AGENT_TLS_ENABLE", value: "true" },
-         { name: "NGINX_AGENT_TLS_SKIP_VERIFY", value: "false" },
-         { name: "NGINX_AGENT_SERVER_TOKEN", isVariable: true, isSecret: true },
+           { name: "NGINX_AGENT_SERVER_GRPCPORT", value: "443" },
+           { name: "NGINX_AGENT_SERVER_HOST", value: "agent.connect.nginx.com" },
+           { name: "NGINX_AGENT_TLS_ENABLE", value: "true" },
+           { name: "NGINX_AGENT_TLS_SKIP_VERIFY", value: "false" },
+           { name: "NGINX_AGENT_SERVER_TOKEN", isVariable: true, isSecret: true },
+           { name: "NGINX_LICENSE_JWT", isVariable: true, isSecret: true }
        ]}
        attrs={[
          {
@@ -85,7 +86,7 @@ Now that we have a data plane key, we can attach a new NGINX OSS instance to the
      />
    </DockerContainer>
 
-   <SetVariable name="nginx-oss-3" isComponent="true" />
+   <SetVariable name="nginx-plus-3" isComponent="true" />
 
    > Note: If you receive an error, it may be that you have not input and saved the **NGINX_AGENT_SERVER_TOKEN** variable above.
 
@@ -93,11 +94,11 @@ Now that we have a data plane key, we can attach a new NGINX OSS instance to the
 
 ### Configure NGINX Instance with TLS
 
-In this section, we will configure our **<GetVariable name="nginx-oss-3" />** NGINX instance to leverage an SSL/TLS certificate that already exists on the instance.
+In this section, we will configure our **<GetVariable name="nginx-plus-3" />** NGINX instance to leverage an SSL/TLS certificate that already exists on the instance.
 
 1. In the NGINX One console, select _Manage_ and then _Instances_ from the left menu.
 
-1. You should see your **<GetVariable name="nginx-oss-3" />** instance in the list. Click it to view the instance details.
+1. You should see your **<GetVariable name="nginx-plus-3" />** instance in the list. Click it to view the instance details.
 
 1. Click the _Configuration_ link near the top of the instance screen, then click on _Edit Configuration_. You are presented with the configuration editor.
 
@@ -117,10 +118,10 @@ In this section, we will configure our **<GetVariable name="nginx-oss-3" />** NG
 
 1. Click the _Details_ link on the page, and select the _Unmanaged_ tab under _Certificates_. You should now see the certificate, its validity status, expiration date, and subject name. As indicated, this certificate is officially an **Unmanaged Certificate**. Any changes to the certificate need to be made on the instance itself.
 
-1. To check that the **<GetVariable name="nginx-oss-3" />** instance is now listening on port 443, click the _Check_ button below.<br />
+1. To check that the **<GetVariable name="nginx-plus-3" />** instance is now listening on port 443, click the _Check_ button below.<br />
 
     <APICheck
-      componentName="nginx-oss-3"
+      componentName="nginx-plus-3"
       targetStatusCode={200}
       tlsComponent={true}
     />
@@ -148,7 +149,7 @@ This interactive lab guide has created a short-lived, unique certificate and key
 
 1. In the NGINX One console, select _Manage_ and then _Instances_ from the left menu.
 
-1. You should see your **<GetVariable name="nginx-oss-3" />** instance in the list. Click it to view the instance details.
+1. You should see your **<GetVariable name="nginx-plus-3" />** instance in the list. Click it to view the instance details.
 
 1. Click the _Configuration_ link near the top of the instance screen, then click on _Edit Configuration_. You are presented with the configuration editor.
 
@@ -257,7 +258,7 @@ This interactive lab guide has created a short-lived, unique certificate and key
 
 ### Test the Configuration
 
-  To check that the **<GetVariable name="nginx-oss-3" />** instance is now listening on 8443, click the _Check_ button below.
+  To check that the **<GetVariable name="nginx-plus-3" />** instance is now listening on 8443, click the _Check_ button below.
 
    <APICheck
      url={`https://${process.env["PETNAME"]}-nginxoss3:8443`}
@@ -278,15 +279,16 @@ Time to clean up the remaining resources you created in this part of the lab. As
 
    <DockerContainer>
      <Docker
-       name="nginx-oss-3"
-       desc="NGINX Plus R32 with Agent."
-       image="private-registry.nginx.com/nginx-plus/agent:debian"
+       name="nginx-plus-3"
+       desc="NGINX Plus R36 with Agent."
+       image="private-registry.nginx.com/nginx-plus/agent:r36-debian"
        env={[
-         { name: "NGINX_AGENT_SERVER_GRPCPORT", value: "443" },
-         { name: "NGINX_AGENT_SERVER_HOST", value: "agent.connect.nginx.com" },
-         { name: "NGINX_AGENT_TLS_ENABLE", value: "true" },
-         { name: "NGINX_AGENT_TLS_SKIP_VERIFY", value: "false" },
-         { name: "NGINX_AGENT_SERVER_TOKEN", isVariable: true, isSecret: true },
+           { name: "NGINX_AGENT_SERVER_GRPCPORT", value: "443" },
+           { name: "NGINX_AGENT_SERVER_HOST", value: "agent.connect.nginx.com" },
+           { name: "NGINX_AGENT_TLS_ENABLE", value: "true" },
+           { name: "NGINX_AGENT_TLS_SKIP_VERIFY", value: "false" },
+           { name: "NGINX_AGENT_SERVER_TOKEN", isVariable: true, isSecret: true },
+           { name: "NGINX_LICENSE_JWT", isVariable: true, isSecret: true }
        ]}
        attrs={[
          {
