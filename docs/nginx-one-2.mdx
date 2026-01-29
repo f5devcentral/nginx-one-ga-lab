@@ -506,15 +506,16 @@ But for this lab, we have automated this process for you. Click on *Back* and th
 
     <Docker
         name="nginx-plus-2"
-        desc="NGINX Plus R32 with Agent."
-        image="private-registry.nginx.com/nginx-plus/agent:debian"
+        desc="NGINX Plus R36 with Agent."
+        image="private-registry.nginx.com/nginx-plus/agent:r36-debian"
         env={[
-            {name: "NGINX_AGENT_SERVER_GRPCPORT", value: "443"},
-            {name: "NGINX_AGENT_SERVER_HOST", value: "agent.connect.nginx.com"},
-            {name: "NGINX_AGENT_TLS_ENABLE", value: "true"},
-            {name: "NGINX_AGENT_TLS_SKIP_VERIFY", value: "false"},
-            {name: "NGINX_AGENT_SERVER_TOKEN", isVariable: true, isSecret: true},
-            {name: "NGINX_AGENT_INSTANCE_GROUP", value: `${process.env["PETNAME"]}`}
+            { name: "NGINX_AGENT_SERVER_GRPCPORT", value: "443" },
+            { name: "NGINX_AGENT_SERVER_HOST", value: "agent.connect.nginx.com" },
+            { name: "NGINX_AGENT_TLS_ENABLE", value: "true" },
+            { name: "NGINX_AGENT_TLS_SKIP_VERIFY", value: "false" },
+            { name: "NGINX_AGENT_SERVER_TOKEN", isVariable: true, isSecret: true },
+            { name: "NGINX_AGENT_INSTANCE_GROUP", value: `${process.env["PETNAME"]}` },
+            { name: "NGINX_LICENSE_JWT", isVariable: true, isSecret: true }
         ]}
         attrs={[
             { name: "volume", value: `${process.env["CONTAINER_MOUNT_BASE_DIR"]}/ssl:/etc/nginx/ssl` }
@@ -579,15 +580,16 @@ Now that we have added our first NGINX Plus instance to the Config Sync Group, l
 
     <Docker
         name="nginx-plus-3"
-        desc="NGINX Plus R32 with Agent."
-        image="private-registry.nginx.com/nginx-plus/agent:debian"
+        desc="NGINX Plus R36 with Agent."
+        image="private-registry.nginx.com/nginx-plus/agent:r36-debian"
         env={[
-            {name: "NGINX_AGENT_SERVER_GRPCPORT", value: "443"},
-            {name: "NGINX_AGENT_SERVER_HOST", value: "agent.connect.nginx.com"},
-            {name: "NGINX_AGENT_TLS_ENABLE", value: "true"},
-            {name: "NGINX_AGENT_TLS_SKIP_VERIFY", value: "false"},
-            {name: "NGINX_AGENT_SERVER_TOKEN", isVariable: true, isSecret: true},
-            {name: "NGINX_AGENT_INSTANCE_GROUP", value: `${process.env["PETNAME"]}`}
+            { name: "NGINX_AGENT_SERVER_GRPCPORT", value: "443" },
+            { name: "NGINX_AGENT_SERVER_HOST", value: "agent.connect.nginx.com" },
+            { name: "NGINX_AGENT_TLS_ENABLE", value: "true" },
+            { name: "NGINX_AGENT_TLS_SKIP_VERIFY", value: "false" },
+            { name: "NGINX_AGENT_SERVER_TOKEN", isVariable: true, isSecret: true },
+            { name: "NGINX_AGENT_INSTANCE_GROUP", value: `${process.env["PETNAME"]}` },
+            { name: "NGINX_LICENSE_JWT", isVariable: true, isSecret: true }
         ]}
         attrs={[
             { name: "volume", value: `${process.env["CONTAINER_MOUNT_BASE_DIR"]}/ssl:/etc/nginx/ssl` }
@@ -693,15 +695,16 @@ To remove an NGINX Plus instance from this Config Sync Group:
 
     <Docker
         name="nginx-plus-3"
-        desc="NGINX Plus R32 with Agent."
-        image="private-registry.nginx.com/nginx-plus/agent:debian"
+        desc="NGINX Plus R36 with Agent."
+        image="private-registry.nginx.com/nginx-plus/agent:r36-debian"
         env={[
-            {name: "NGINX_AGENT_SERVER_GRPCPORT", value: "443"},
-            {name: "NGINX_AGENT_SERVER_HOST", value: "agent.connect.nginx.com"},
-            {name: "NGINX_AGENT_TLS_ENABLE", value: "true"},
-            {name: "NGINX_AGENT_TLS_SKIP_VERIFY", value: "false"},
-            {name: "NGINX_AGENT_SERVER_TOKEN", isVariable: true, isSecret: true},
-            {name: "NGINX_AGENT_INSTANCE_GROUP", value: `${process.env["PETNAME"]}`}
+            { name: "NGINX_AGENT_SERVER_GRPCPORT", value: "443" },
+            { name: "NGINX_AGENT_SERVER_HOST", value: "agent.connect.nginx.com" },
+            { name: "NGINX_AGENT_TLS_ENABLE", value: "true" },
+            { name: "NGINX_AGENT_TLS_SKIP_VERIFY", value: "false" },
+            { name: "NGINX_AGENT_SERVER_TOKEN", isVariable: true, isSecret: true },
+            { name: "NGINX_AGENT_INSTANCE_GROUP", value: `${process.env["PETNAME"]}` },
+            { name: "NGINX_LICENSE_JWT", isVariable: true, isSecret: true }
         ]}
         attrs={[
             { name: "volume", value: `${process.env["CONTAINER_MOUNT_BASE_DIR"]}/ssl:/etc/nginx/ssl` }
@@ -821,15 +824,15 @@ the Config Sync Group.
     <DockerContainer>
         <Docker
             name="nginx-oss-1"
-            desc="NGINX OSS 1.27.1 with Agent."
-            image="private-registry-test.nginx.com/nginx/agent:1.27.1-alpine"
+            desc="NGINX OSS 1.29.3 with Agent."
+            image="docker-registry.nginx.com/nginx/agent:1.29.3-alpine"
             env={[
-                {name: "NGINX_AGENT_SERVER_GRPCPORT", value: "443"},
-                {name: "NGINX_AGENT_SERVER_HOST", value: "agent.connect.nginx.com"},
-                {name: "NGINX_AGENT_TLS_ENABLE", value: "true"},
-                {name: "NGINX_AGENT_TLS_SKIP_VERIFY", value: "false"},
-                {name: "NGINX_AGENT_SERVER_TOKEN", isVariable: true, isSecret: true},
-                {name: "NGINX_AGENT_INSTANCE_GROUP", value: `${process.env["PETNAME"]}-oss`}
+                { name: "NGINX_AGENT_SERVER_GRPCPORT", value: "443" },
+                { name: "NGINX_AGENT_SERVER_HOST", value: "agent.connect.nginx.com" },
+                { name: "NGINX_AGENT_TLS_ENABLE", value: "true" },
+                { name: "NGINX_AGENT_TLS_SKIP_VERIFY", value: "false" },
+                { name: "NGINX_AGENT_SERVER_TOKEN", isVariable: true, isSecret: true },
+                { name: "NGINX_AGENT_INSTANCE_GROUP", value: `${process.env["PETNAME"]}-oss` }
             ]}
             attrs={[
                 { name: "volume", value: `${process.env["CONTAINER_MOUNT_BASE_DIR"]}/ssl:/etc/nginx/ssl` }
@@ -837,15 +840,15 @@ the Config Sync Group.
         />
         <Docker
             name="nginx-oss-2"
-            desc="NGINX OSS 1.27.1 with Agent."
-            image="private-registry-test.nginx.com/nginx/agent:1.27.1-alpine"
+            desc="NGINX OSS 1.29.3 with Agent."
+            image="docker-registry.nginx.com/nginx/agent:1.29.3-alpine"
             env={[
-                {name: "NGINX_AGENT_SERVER_GRPCPORT", value: "443"},
-                {name: "NGINX_AGENT_SERVER_HOST", value: "agent.connect.nginx.com"},
-                {name: "NGINX_AGENT_TLS_ENABLE", value: "true"},
-                {name: "NGINX_AGENT_TLS_SKIP_VERIFY", value: "false"},
-                {name: "NGINX_AGENT_SERVER_TOKEN", isVariable: true, isSecret: true},
-                {name: "NGINX_AGENT_INSTANCE_GROUP", value: `${process.env["PETNAME"]}-oss`}
+                { name: "NGINX_AGENT_SERVER_GRPCPORT", value: "443" },
+                { name: "NGINX_AGENT_SERVER_HOST", value: "agent.connect.nginx.com" },
+                { name: "NGINX_AGENT_TLS_ENABLE", value: "true" },
+                { name: "NGINX_AGENT_TLS_SKIP_VERIFY", value: "false" },
+                { name: "NGINX_AGENT_SERVER_TOKEN", isVariable: true, isSecret: true },
+                { name: "NGINX_AGENT_INSTANCE_GROUP", value: `${process.env["PETNAME"]}-oss` }
             ]}
             attrs={[
                 { name: "volume", value: `${process.env["CONTAINER_MOUNT_BASE_DIR"]}/ssl:/etc/nginx/ssl` }
@@ -893,14 +896,15 @@ Time to clean up the remaining resources you created in this part of the lab. As
     <DockerContainer>
         <Docker
             name="nginx-plus-1"
-            desc="NGINX Plus R32 with Agent."
-            image="private-registry.nginx.com/nginx-plus/agent:debian"
+            desc="NGINX Plus R36 with Agent."
+            image="private-registry.nginx.com/nginx-plus/agent:r36-debian"
             env={[
-                {name: "NGINX_AGENT_SERVER_GRPCPORT", value: "443"},
-                {name: "NGINX_AGENT_SERVER_HOST", value: "agent.connect.nginx.com"},
-                {name: "NGINX_AGENT_TLS_ENABLE", value: "true"},
-                {name: "NGINX_AGENT_TLS_SKIP_VERIFY", value: "false"},
-                {name: "NGINX_AGENT_SERVER_TOKEN", isVariable: true, isSecret: true},
+                { name: "NGINX_AGENT_SERVER_GRPCPORT", value: "443" },
+                { name: "NGINX_AGENT_SERVER_HOST", value: "agent.connect.nginx.com" },
+                { name: "NGINX_AGENT_TLS_ENABLE", value: "true" },
+                { name: "NGINX_AGENT_TLS_SKIP_VERIFY", value: "false" },
+                { name: "NGINX_AGENT_SERVER_TOKEN", isVariable: true, isSecret: true },
+                { name: "NGINX_LICENSE_JWT", isVariable: true, isSecret: true }
             ]}
             attrs={[
                 { name: "volume", value: `${process.env["CONTAINER_MOUNT_BASE_DIR"]}/ssl:/etc/nginx/ssl` }
@@ -908,15 +912,16 @@ Time to clean up the remaining resources you created in this part of the lab. As
         />
         <Docker
             name="nginx-plus-2"
-            desc="NGINX Plus R32 with Agent."
-            image="private-registry.nginx.com/nginx-plus/agent:debian"
+            desc="NGINX Plus R36 with Agent."
+            image="private-registry.nginx.com/nginx-plus/agent:r36-debian"
             env={[
-                {name: "NGINX_AGENT_SERVER_GRPCPORT", value: "443"},
-                {name: "NGINX_AGENT_SERVER_HOST", value: "agent.connect.nginx.com"},
-                {name: "NGINX_AGENT_TLS_ENABLE", value: "true"},
-                {name: "NGINX_AGENT_TLS_SKIP_VERIFY", value: "false"},
-                {name: "NGINX_AGENT_SERVER_TOKEN", isVariable: true, isSecret: true},
-                {name: "NGINX_AGENT_INSTANCE_GROUP", value: `${process.env["PETNAME"]}`}
+                { name: "NGINX_AGENT_SERVER_GRPCPORT", value: "443" },
+                { name: "NGINX_AGENT_SERVER_HOST", value: "agent.connect.nginx.com" },
+                { name: "NGINX_AGENT_TLS_ENABLE", value: "true" },
+                { name: "NGINX_AGENT_TLS_SKIP_VERIFY", value: "false" },
+                { name: "NGINX_AGENT_SERVER_TOKEN", isVariable: true, isSecret: true },
+                { name: "NGINX_AGENT_INSTANCE_GROUP", value: `${process.env["PETNAME"]}` },
+                { name: "NGINX_LICENSE_JWT", isVariable: true, isSecret: true }
             ]}
             attrs={[
                 { name: "volume", value: `${process.env["CONTAINER_MOUNT_BASE_DIR"]}/ssl:/etc/nginx/ssl` }
@@ -924,15 +929,15 @@ Time to clean up the remaining resources you created in this part of the lab. As
         />
         <Docker
             name="nginx-oss-1"
-            desc="NGINX OSS 1.27.1 with Agent."
-            image="private-registry-test.nginx.com/nginx/agent:1.27.1-alpine"
+            desc="NGINX OSS 1.29.3 with Agent."
+            image="docker-registry.nginx.com/nginx/agent:1.29.3-alpine"
             env={[
-                {name: "NGINX_AGENT_SERVER_GRPCPORT", value: "443"},
-                {name: "NGINX_AGENT_SERVER_HOST", value: "agent.connect.nginx.com"},
-                {name: "NGINX_AGENT_TLS_ENABLE", value: "true"},
-                {name: "NGINX_AGENT_TLS_SKIP_VERIFY", value: "false"},
-                {name: "NGINX_AGENT_SERVER_TOKEN", isVariable: true, isSecret: true},
-                {name: "NGINX_AGENT_INSTANCE_GROUP", value: `${process.env["PETNAME"]}-oss`}
+                { name: "NGINX_AGENT_SERVER_GRPCPORT", value: "443" },
+                { name: "NGINX_AGENT_SERVER_HOST", value: "agent.connect.nginx.com" },
+                { name: "NGINX_AGENT_TLS_ENABLE", value: "true" },
+                { name: "NGINX_AGENT_TLS_SKIP_VERIFY", value: "false" },
+                { name: "NGINX_AGENT_SERVER_TOKEN", isVariable: true, isSecret: true },
+                { name: "NGINX_AGENT_INSTANCE_GROUP", value: `${process.env["PETNAME"]}-oss` }
             ]}
             attrs={[
                 { name: "volume", value: `${process.env["CONTAINER_MOUNT_BASE_DIR"]}/ssl:/etc/nginx/ssl` }
@@ -940,15 +945,15 @@ Time to clean up the remaining resources you created in this part of the lab. As
         />
         <Docker
             name="nginx-oss-2"
-            desc="NGINX OSS 1.27.1 with Agent."
-            image="private-registry-test.nginx.com/nginx/agent:1.27.1-alpine"
+            desc="NGINX OSS 1.29.3 with Agent."
+            image="docker-registry.nginx.com/nginx/agent:1.29.3-alpine"
             env={[
-                {name: "NGINX_AGENT_SERVER_GRPCPORT", value: "443"},
-                {name: "NGINX_AGENT_SERVER_HOST", value: "agent.connect.nginx.com"},
-                {name: "NGINX_AGENT_TLS_ENABLE", value: "true"},
-                {name: "NGINX_AGENT_TLS_SKIP_VERIFY", value: "false"},
-                {name: "NGINX_AGENT_SERVER_TOKEN", isVariable: true, isSecret: true},
-                {name: "NGINX_AGENT_INSTANCE_GROUP", value: `${process.env["PETNAME"]}-oss`}
+                { name: "NGINX_AGENT_SERVER_GRPCPORT", value: "443" },
+                { name: "NGINX_AGENT_SERVER_HOST", value: "agent.connect.nginx.com" },
+                { name: "NGINX_AGENT_TLS_ENABLE", value: "true" },
+                { name: "NGINX_AGENT_TLS_SKIP_VERIFY", value: "false" },
+                { name: "NGINX_AGENT_SERVER_TOKEN", isVariable: true, isSecret: true },
+                { name: "NGINX_AGENT_INSTANCE_GROUP", value: `${process.env["PETNAME"]}-oss` }
             ]}
             attrs={[
                 { name: "volume", value: `${process.env["CONTAINER_MOUNT_BASE_DIR"]}/ssl:/etc/nginx/ssl` }
