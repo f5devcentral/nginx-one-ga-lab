@@ -517,7 +517,8 @@ But for this lab, we have automated this process for you. Click on *Back* and th
             { name: "NGINX_LICENSE_JWT", isVariable: true, isSecret: true }
         ]}
         attrs={[
-            { name: "volume", value: `${process.env["CONTAINER_MOUNT_BASE_DIR"]}/ssl:/etc/nginx/ssl` }
+            { name: "volume", value: `${process.env["CONTAINER_MOUNT_BASE_DIR"]}/ssl:/etc/nginx/ssl` },
+            { name: "volume", value: `${process.env["CONTAINER_MOUNT_BASE_DIR"]}/nginx-api.conf:/etc/nginx/conf.d/nginx-api.conf` }
         ]}
     />
 
@@ -590,7 +591,8 @@ Now that we have added our first NGINX Plus instance to the Config Sync Group, l
             { name: "NGINX_LICENSE_JWT", isVariable: true, isSecret: true }
         ]}
         attrs={[
-            { name: "volume", value: `${process.env["CONTAINER_MOUNT_BASE_DIR"]}/ssl:/etc/nginx/ssl` }
+            { name: "volume", value: `${process.env["CONTAINER_MOUNT_BASE_DIR"]}/ssl:/etc/nginx/ssl` },
+            { name: "volume", value: `${process.env["CONTAINER_MOUNT_BASE_DIR"]}/nginx-api.conf:/etc/nginx/conf.d/nginx-api.conf` }
         ]}
     />
 
@@ -704,7 +706,8 @@ To remove an NGINX Plus instance from this Config Sync Group:
             { name: "NGINX_LICENSE_JWT", isVariable: true, isSecret: true }
         ]}
         attrs={[
-            { name: "volume", value: `${process.env["CONTAINER_MOUNT_BASE_DIR"]}/ssl:/etc/nginx/ssl` }
+            { name: "volume", value: `${process.env["CONTAINER_MOUNT_BASE_DIR"]}/ssl:/etc/nginx/ssl` },
+            { name: "volume", value: `${process.env["CONTAINER_MOUNT_BASE_DIR"]}/nginx-api.conf:/etc/nginx/conf.d/nginx-api.conf` }
         ]}
     />
 
@@ -901,7 +904,8 @@ Time to clean up the remaining resources you created in this part of the lab. As
                 { name: "NGINX_LICENSE_JWT", isVariable: true, isSecret: true }
             ]}
             attrs={[
-                { name: "volume", value: `${process.env["CONTAINER_MOUNT_BASE_DIR"]}/ssl:/etc/nginx/ssl` }
+                { name: "volume", value: `${process.env["CONTAINER_MOUNT_BASE_DIR"]}/ssl:/etc/nginx/ssl` },
+                { name: "volume", value: `${process.env["CONTAINER_MOUNT_BASE_DIR"]}/nginx-api.conf:/etc/nginx/conf.d/nginx-api.conf` }
             ]}
         />
         <Docker
@@ -917,7 +921,8 @@ Time to clean up the remaining resources you created in this part of the lab. As
                 { name: "NGINX_LICENSE_JWT", isVariable: true, isSecret: true }
             ]}
             attrs={[
-                { name: "volume", value: `${process.env["CONTAINER_MOUNT_BASE_DIR"]}/ssl:/etc/nginx/ssl` }
+                { name: "volume", value: `${process.env["CONTAINER_MOUNT_BASE_DIR"]}/ssl:/etc/nginx/ssl` },
+                { name: "volume", value: `${process.env["CONTAINER_MOUNT_BASE_DIR"]}/nginx-api.conf:/etc/nginx/conf.d/nginx-api.conf` }
             ]}
         />
         <Docker

@@ -77,10 +77,8 @@ Now that we have a data plane key, we can attach a new NGINX OSS instance to the
            { name: "NGINX_LICENSE_JWT", isVariable: true, isSecret: true }
        ]}
        attrs={[
-         {
-           name: "volume",
-           value: `${process.env["CONTAINER_MOUNT_BASE_DIR"]}/ssl:/etc/nginx/ssl`,
-         },
+            { name: "volume", value: `${process.env["CONTAINER_MOUNT_BASE_DIR"]}/ssl:/etc/nginx/ssl` },
+            { name: "volume", value: `${process.env["CONTAINER_MOUNT_BASE_DIR"]}/nginx-api.conf:/etc/nginx/conf.d/nginx-api.conf` }
        ]}
      />
    </DockerContainer>
@@ -289,10 +287,8 @@ Time to clean up the remaining resources you created in this part of the lab. As
            { name: "NGINX_LICENSE_JWT", isVariable: true, isSecret: true }
        ]}
        attrs={[
-         {
-           name: "volume",
-           value: `${process.env["CONTAINER_MOUNT_BASE_DIR"]}/ssl:/etc/nginx/ssl`,
-         },
+            { name: "volume", value: `${process.env["CONTAINER_MOUNT_BASE_DIR"]}/ssl:/etc/nginx/ssl` },
+            { name: "volume", value: `${process.env["CONTAINER_MOUNT_BASE_DIR"]}/nginx-api.conf:/etc/nginx/conf.d/nginx-api.conf` }
        ]}
      />
    </DockerContainer>
