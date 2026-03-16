@@ -156,7 +156,7 @@ The *auto* value tells NGINX to:
 This line configures how NGINX logs errors that occur during execution. The *notice* level is set, which means that:
 
 * Errors with a severity level greater than or equal to NOTICE will be logged.
-* Other error levels (e.g., ERROR, WARNING) won't be logged.
+* Other error levels (e.g., DEBUG, INFO) won't be logged.
 
 The log file location */var/log/nginx/error.log* indicates where NGINX will write its error messages. This is the standard log location for most Linux distributions.
 
