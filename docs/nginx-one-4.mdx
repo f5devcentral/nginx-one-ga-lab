@@ -68,7 +68,7 @@ Now that we have a data plane key, we can attach a new NGINX OSS instance to the
      <Docker
        name="nginx-plus-4"
        desc="NGINX Plus R36 with Agent."
-       image="private-registry.nginx.com/nginx-plus/agentv3:r36-debian"
+       image="private-registry.nginx.com/nginx-plus/agentv3:r37.0-debian"
        env={[
            { name: "NGINX_AGENT_COMMAND_SERVER_PORT", value: "443" },
            { name: "NGINX_AGENT_COMMAND_SERVER_HOST", value: "agent.connect.nginx.com" },
@@ -278,7 +278,7 @@ Time to clean up the remaining resources you created in this part of the lab. As
      <Docker
        name="nginx-plus-4"
        desc="NGINX Plus R36 with Agent."
-       image="private-registry.nginx.com/nginx-plus/agentv3:r36-debian"
+       image="private-registry.nginx.com/nginx-plus/agentv3:r37.0-debian"
        env={[
            { name: "NGINX_AGENT_COMMAND_SERVER_PORT", value: "443" },
            { name: "NGINX_AGENT_COMMAND_SERVER_HOST", value: "agent.connect.nginx.com" },

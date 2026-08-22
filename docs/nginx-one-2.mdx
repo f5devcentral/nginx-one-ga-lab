@@ -507,7 +507,7 @@ But for this lab, we have automated this process for you. Click on *Back* and th
     <Docker
         name="nginx-plus-2"
         desc="NGINX Plus R36 with Agent."
-        image="private-registry.nginx.com/nginx-plus/agentv3:r36-debian"
+        image="private-registry.nginx.com/nginx-plus/agentv3:r37.0-debian"
         env={[
             { name: "NGINX_AGENT_COMMAND_SERVER_PORT", value: "443" },
             { name: "NGINX_AGENT_COMMAND_SERVER_HOST", value: "agent.connect.nginx.com" },
@@ -581,7 +581,7 @@ Now that we have added our first NGINX Plus instance to the Config Sync Group, l
     <Docker
         name="nginx-plus-3"
         desc="NGINX Plus R36 with Agent."
-        image="private-registry.nginx.com/nginx-plus/agentv3:r36-debian"
+        image="private-registry.nginx.com/nginx-plus/agentv3:r37.0-debian"
         env={[
             { name: "NGINX_AGENT_COMMAND_SERVER_PORT", value: "443" },
             { name: "NGINX_AGENT_COMMAND_SERVER_HOST", value: "agent.connect.nginx.com" },
@@ -696,7 +696,7 @@ To remove an NGINX Plus instance from this Config Sync Group:
     <Docker
         name="nginx-plus-3"
         desc="NGINX Plus R36 with Agent."
-        image="private-registry.nginx.com/nginx-plus/agentv3:r36-debian"
+        image="private-registry.nginx.com/nginx-plus/agentv3:r37.0-debian"
         env={[
             { name: "NGINX_AGENT_COMMAND_SERVER_PORT", value: "443" },
             { name: "NGINX_AGENT_COMMAND_SERVER_HOST", value: "agent.connect.nginx.com" },
@@ -825,7 +825,7 @@ the Config Sync Group.
         <Docker
             name="nginx-oss-1"
             desc="NGINX OSS 1.29.3 with Agent."
-            image="docker-registry.nginx.com/nginx/agentv3:1.29.3-alpine"
+            image="docker-registry.nginx.com/nginx/agentv3:1.31.1-alpine"
             env={[
                 { name: "NGINX_AGENT_COMMAND_SERVER_PORT", value: "443" },
                 { name: "NGINX_AGENT_COMMAND_SERVER_HOST", value: "agent.connect.nginx.com" },
@@ -840,7 +840,7 @@ the Config Sync Group.
         <Docker
             name="nginx-oss-2"
             desc="NGINX OSS 1.29.3 with Agent."
-            image="docker-registry.nginx.com/nginx/agentv3:1.29.3-alpine"
+            image="docker-registry.nginx.com/nginx/agentv3:1.31.1-alpine"
             env={[
                 { name: "NGINX_AGENT_COMMAND_SERVER_PORT", value: "443" },
                 { name: "NGINX_AGENT_COMMAND_SERVER_HOST", value: "agent.connect.nginx.com" },
@@ -895,7 +895,7 @@ Time to clean up the remaining resources you created in this part of the lab. As
         <Docker
             name="nginx-plus-1"
             desc="NGINX Plus R36 with Agent."
-            image="private-registry.nginx.com/nginx-plus/agentv3:r36-debian"
+            image="private-registry.nginx.com/nginx-plus/agentv3:r37.0-debian"
             env={[
                 { name: "NGINX_AGENT_COMMAND_SERVER_PORT", value: "443" },
                 { name: "NGINX_AGENT_COMMAND_SERVER_HOST", value: "agent.connect.nginx.com" },
@@ -911,7 +911,7 @@ Time to clean up the remaining resources you created in this part of the lab. As
         <Docker
             name="nginx-plus-2"
             desc="NGINX Plus R36 with Agent."
-            image="private-registry.nginx.com/nginx-plus/agentv3:r36-debian"
+            image="private-registry.nginx.com/nginx-plus/agentv3:r37.0-debian"
             env={[
                 { name: "NGINX_AGENT_COMMAND_SERVER_PORT", value: "443" },
                 { name: "NGINX_AGENT_COMMAND_SERVER_HOST", value: "agent.connect.nginx.com" },
@@ -928,7 +928,7 @@ Time to clean up the remaining resources you created in this part of the lab. As
         <Docker
             name="nginx-oss-1"
             desc="NGINX OSS 1.29.3 with Agent."
-            image="docker-registry.nginx.com/nginx/agentv3:1.29.3-alpine"
+            image="docker-registry.nginx.com/nginx/agentv3:1.31.1-alpine"
             env={[
                 { name: "NGINX_AGENT_COMMAND_SERVER_PORT", value: "443" },
                 { name: "NGINX_AGENT_COMMAND_SERVER_HOST", value: "agent.connect.nginx.com" },
@@ -943,7 +943,7 @@ Time to clean up the remaining resources you created in this part of the lab. As
         <Docker
             name="nginx-oss-2"
             desc="NGINX OSS 1.29.3 with Agent."
-            image="docker-registry.nginx.com/nginx/agentv3:1.29.3-alpine"
+            image="docker-registry.nginx.com/nginx/agentv3:1.31.1-alpine"
             env={[
                 { name: "NGINX_AGENT_COMMAND_SERVER_PORT", value: "443" },
                 { name: "NGINX_AGENT_COMMAND_SERVER_HOST", value: "agent.connect.nginx.com" },
