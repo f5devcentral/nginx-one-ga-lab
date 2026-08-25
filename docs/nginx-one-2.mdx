@@ -513,7 +513,7 @@ But for this lab, we have automated this process for you. Click on *Back* and th
             { name: "NGINX_AGENT_COMMAND_SERVER_HOST", value: "agent.connect.nginx.com" },
             { name: "NGINX_AGENT_COMMAND_TLS_SKIP_VERIFY", value: "false" },
             { name: "NGINX_AGENT_COMMAND_AUTH_TOKEN", isVariable: true, isSecret: true },
-            { name: "NGINX_AGENT_LABELS", value: `config-sync-group=${PETNAME}` },
+            { name: "NGINX_AGENT_LABELS", value: `config-sync-group=${PETNAME}`, resolveTemplates: true },
             { name: "NGINX_LICENSE_JWT", isVariable: true, isSecret: true }
         ]}
         attrs={[
@@ -587,7 +587,7 @@ Now that we have added our first NGINX Plus instance to the Config Sync Group, l
             { name: "NGINX_AGENT_COMMAND_SERVER_HOST", value: "agent.connect.nginx.com" },
             { name: "NGINX_AGENT_COMMAND_TLS_SKIP_VERIFY", value: "false" },
             { name: "NGINX_AGENT_COMMAND_AUTH_TOKEN", isVariable: true, isSecret: true },
-            { name: "NGINX_AGENT_LABELS", value: `config-sync-group=${PETNAME}` },
+            { name: "NGINX_AGENT_LABELS", value: `config-sync-group=${PETNAME}`, resolveTemplates: true },
             { name: "NGINX_LICENSE_JWT", isVariable: true, isSecret: true }
         ]}
         attrs={[
@@ -702,7 +702,7 @@ To remove an NGINX Plus instance from this Config Sync Group:
             { name: "NGINX_AGENT_COMMAND_SERVER_HOST", value: "agent.connect.nginx.com" },
             { name: "NGINX_AGENT_COMMAND_TLS_SKIP_VERIFY", value: "false" },
             { name: "NGINX_AGENT_COMMAND_AUTH_TOKEN", isVariable: true, isSecret: true },
-            { name: "NGINX_AGENT_LABELS", value: `config-sync-group=${PETNAME}` },
+            { name: "NGINX_AGENT_LABELS", value: `config-sync-group=${PETNAME}`, resolveTemplates: true },
             { name: "NGINX_LICENSE_JWT", isVariable: true, isSecret: true }
         ]}
         attrs={[
@@ -831,7 +831,7 @@ the Config Sync Group.
                 { name: "NGINX_AGENT_COMMAND_SERVER_HOST", value: "agent.connect.nginx.com" },
                 { name: "NGINX_AGENT_COMMAND_TLS_SKIP_VERIFY", value: "false" },
                 { name: "NGINX_AGENT_COMMAND_AUTH_TOKEN", isVariable: true, isSecret: true },
-                { name: "NGINX_AGENT_LABELS", value: `config-sync-group=${PETNAME}-oss` },
+                { name: "NGINX_AGENT_LABELS", value: `config-sync-group=${PETNAME}-oss`, resolveTemplates: true },
             ]}
             attrs={[
                 { name: "volume", value: `${process.env["CONTAINER_MOUNT_BASE_DIR"]}/ssl:/etc/nginx/ssl` }
@@ -846,7 +846,7 @@ the Config Sync Group.
                 { name: "NGINX_AGENT_COMMAND_SERVER_HOST", value: "agent.connect.nginx.com" },
                 { name: "NGINX_AGENT_COMMAND_TLS_SKIP_VERIFY", value: "false" },
                 { name: "NGINX_AGENT_COMMAND_AUTH_TOKEN", isVariable: true, isSecret: true },
-                { name: "NGINX_AGENT_LABELS", value: `config-sync-group=${PETNAME}-oss` },
+                { name: "NGINX_AGENT_LABELS", value: `config-sync-group=${PETNAME}-oss`, resolveTemplates: true },
             ]}
             attrs={[
                 { name: "volume", value: `${process.env["CONTAINER_MOUNT_BASE_DIR"]}/ssl:/etc/nginx/ssl` }
@@ -917,7 +917,7 @@ Time to clean up the remaining resources you created in this part of the lab. As
                 { name: "NGINX_AGENT_COMMAND_SERVER_HOST", value: "agent.connect.nginx.com" },
                 { name: "NGINX_AGENT_COMMAND_TLS_SKIP_VERIFY", value: "false" },
                 { name: "NGINX_AGENT_COMMAND_AUTH_TOKEN", isVariable: true, isSecret: true },
-                { name: "NGINX_AGENT_LABELS", value: `config-sync-group=${PETNAME}` },
+                { name: "NGINX_AGENT_LABELS", value: `config-sync-group=${PETNAME}`, resolveTemplates: true },
                 { name: "NGINX_LICENSE_JWT", isVariable: true, isSecret: true }
             ]}
             attrs={[
@@ -934,7 +934,7 @@ Time to clean up the remaining resources you created in this part of the lab. As
                 { name: "NGINX_AGENT_COMMAND_SERVER_HOST", value: "agent.connect.nginx.com" },
                 { name: "NGINX_AGENT_COMMAND_TLS_SKIP_VERIFY", value: "false" },
                 { name: "NGINX_AGENT_COMMAND_AUTH_TOKEN", isVariable: true, isSecret: true },
-                { name: "NGINX_AGENT_LABELS", value: `config-sync-group=${PETNAME}-oss` },
+                { name: "NGINX_AGENT_LABELS", value: `config-sync-group=${PETNAME}-oss`, resolveTemplates: true },
             ]}
             attrs={[
                 { name: "volume", value: `${process.env["CONTAINER_MOUNT_BASE_DIR"]}/ssl:/etc/nginx/ssl` }
@@ -949,7 +949,7 @@ Time to clean up the remaining resources you created in this part of the lab. As
                 { name: "NGINX_AGENT_COMMAND_SERVER_HOST", value: "agent.connect.nginx.com" },
                 { name: "NGINX_AGENT_COMMAND_TLS_SKIP_VERIFY", value: "false" },
                 { name: "NGINX_AGENT_COMMAND_AUTH_TOKEN", isVariable: true, isSecret: true },
-                { name: "NGINX_AGENT_LABELS", value: `config-sync-group=${PETNAME}-oss` },
+                { name: "NGINX_AGENT_LABELS", value: `config-sync-group=${PETNAME}-oss`, resolveTemplates: true },
             ]}
             attrs={[
                 { name: "volume", value: `${process.env["CONTAINER_MOUNT_BASE_DIR"]}/ssl:/etc/nginx/ssl` }
